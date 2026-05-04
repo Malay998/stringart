@@ -2829,47 +2829,47 @@
         <div class="size-grid">
 
           <label class="size-option">
-            <input type="radio" name="size" value="Small - 8 x 10 inch" data-price="499" onchange="updateSummary()">
+            <input type="radio" name="size" value="Small - 12 inch" data-size-key="small" data-price="2499" onchange="updateSummary()">
             <span>
               <div>
                 <b>Small</b>
-                <small>8 x 10 inch<br>Best for simple gifts.</small>
+                <small>12 inch<br>Best for simple gifts.</small>
               </div>
-              <strong>₹499</strong>
+              <strong>₹2499</strong>
             </span>
           </label>
 
           <label class="size-option featured-size">
-            <input type="radio" name="size" value="Medium - 12 x 16 inch" data-price="899" checked onchange="updateSummary()">
+            <input type="radio" name="size" value="Medium - 18 inch" data-size-key="medium" data-price="2999" checked onchange="updateSummary()">
             <span>
               <span class="popular-ribbon">★ Most Popular</span>
               <div>
                 <b>Medium</b>
-                <small>12 x 16 inch<br>Premium look, perfect balance.</small>
+                <small>18 inch<br>Premium look, perfect balance.</small>
               </div>
-              <strong>₹899</strong>
+              <strong>₹2999</strong>
             </span>
           </label>
 
           <label class="size-option">
-            <input type="radio" name="size" value="Large - 16 x 20 inch" data-price="1499" onchange="updateSummary()">
+            <input type="radio" name="size" value="Large - 24 inch" data-size-key="large" data-price="3999" onchange="updateSummary()">
             <span>
               <div>
                 <b>Large</b>
-                <small>16 x 20 inch<br>Best for detailed wall art.</small>
+                <small>24 inch<br>Best for detailed wall art.</small>
               </div>
-              <strong>₹1499</strong>
+              <strong>₹3999</strong>
             </span>
           </label>
 
           <label class="size-option">
-            <input type="radio" name="size" value="XL - 18 x 24 inch" data-price="1999" onchange="updateSummary()">
+            <input type="radio" name="size" value="XL - 30 inch" data-size-key="xl" data-price="4999" onchange="updateSummary()">
             <span>
               <div>
                 <b>XL</b>
-                <small>18 x 24 inch<br>For a grand premium display.</small>
+                <small>30 inch<br>For a grand premium display.</small>
               </div>
-              <strong>₹1999</strong>
+              <strong>₹4999</strong>
             </span>
           </label>
 
@@ -2879,13 +2879,15 @@
       <div class="box">
         <h2 class="section-title">What exactly do you want?</h2>
         <p class="section-text">
-          Select the artwork style you are looking for. This is sent directly to WhatsApp with your details.
+          Select the artwork style you are looking for. Add-on prices now change fairly based on the size selected, because a larger piece needs more thread, pins, time, and detailing.
         </p>
 
         <div class="art-list">
 
           <label class="art-option">
-            <input type="radio" name="artType" value="Single Face Portrait" data-price="0" checked onchange="updateSummary()">
+            <input type="radio" name="artType" value="Single Face Portrait"
+              data-small-price="0" data-medium-price="0" data-large-price="0" data-xl-price="0"
+              checked onchange="updateSummary()">
             <span>
               <div class="art-icon">👤</div>
               <div class="art-copy">
@@ -2897,98 +2899,114 @@
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="2 Face Portrait" data-price="250" onchange="updateSummary()">
+            <input type="radio" name="artType" value="2 Face Portrait"
+              data-small-price="300" data-medium-price="450" data-large-price="650" data-xl-price="850"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">👥</div>
               <div class="art-copy">
                 <b>2 Face Portrait</b>
                 <small>For couples, siblings, friends, or parents.</small>
               </div>
-              <div class="art-price">+₹250</div>
+              <div class="art-price">+₹450</div>
             </span>
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="3 Face Portrait" data-price="450" onchange="updateSummary()">
+            <input type="radio" name="artType" value="3 Face Portrait"
+              data-small-price="550" data-medium-price="750" data-large-price="1050" data-xl-price="1350"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">👨‍👩‍👧</div>
               <div class="art-copy">
                 <b>3 Face Portrait</b>
                 <small>Great for small family or trio artwork.</small>
               </div>
-              <div class="art-price">+₹450</div>
+              <div class="art-price">+₹750</div>
             </span>
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="4 Face Portrait" data-price="650" onchange="updateSummary()">
+            <input type="radio" name="artType" value="4 Face Portrait"
+              data-small-price="750" data-medium-price="1050" data-large-price="1450" data-xl-price="1850"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">👨‍👩‍👧‍👦</div>
               <div class="art-copy">
                 <b>4 Face Portrait</b>
                 <small>Family style artwork with more detailing.</small>
               </div>
-              <div class="art-price">+₹650</div>
+              <div class="art-price">+₹1050</div>
             </span>
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="Couple Portrait in Heart Shape" data-price="350" onchange="updateSummary()">
+            <input type="radio" name="artType" value="Couple Portrait in Heart Shape"
+              data-small-price="450" data-medium-price="650" data-large-price="900" data-xl-price="1150"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">♥</div>
               <div class="art-copy">
                 <b>Couple Heart Portrait</b>
                 <small>Romantic heart-shape concept for couples.</small>
               </div>
-              <div class="art-price">+₹350</div>
+              <div class="art-price">+₹650</div>
             </span>
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="Pet Portrait" data-price="250" onchange="updateSummary()">
+            <input type="radio" name="artType" value="Pet Portrait"
+              data-small-price="300" data-medium-price="450" data-large-price="650" data-xl-price="850"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">🐾</div>
               <div class="art-copy">
                 <b>Pet Portrait</b>
                 <small>For dog, cat, or any pet memory.</small>
               </div>
-              <div class="art-price">+₹250</div>
+              <div class="art-price">+₹450</div>
             </span>
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="Name / Text Artwork" data-price="150" onchange="updateSummary()">
+            <input type="radio" name="artType" value="Name / Text Artwork"
+              data-small-price="200" data-medium-price="300" data-large-price="450" data-xl-price="600"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">✦</div>
               <div class="art-copy">
                 <b>Name / Text Artwork</b>
                 <small>Name, date, quote, initials, or message.</small>
               </div>
-              <div class="art-price">+₹150</div>
+              <div class="art-price">+₹300</div>
             </span>
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="Logo / Brand Artwork" data-price="500" onchange="updateSummary()">
+            <input type="radio" name="artType" value="Logo / Brand Artwork"
+              data-small-price="600" data-medium-price="850" data-large-price="1200" data-xl-price="1550"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">◆</div>
               <div class="art-copy">
                 <b>Logo / Brand Artwork</b>
                 <small>For business, studio, cafe, or room decor.</small>
               </div>
-              <div class="art-price">+₹500</div>
+              <div class="art-price">+₹850</div>
             </span>
           </label>
 
           <label class="art-option">
-            <input type="radio" name="artType" value="Something Custom / Creative" data-price="300" onchange="updateSummary()">
+            <input type="radio" name="artType" value="Something Custom / Creative"
+              data-small-price="400" data-medium-price="600" data-large-price="850" data-xl-price="1100"
+              onchange="updateSummary()">
             <span>
               <div class="art-icon">✨</div>
               <div class="art-copy">
                 <b>Something Custom</b>
                 <small>Have a unique idea? Share it with me.</small>
               </div>
-              <div class="art-price">+₹300</div>
+              <div class="art-price">+₹600</div>
             </span>
           </label>
 
@@ -3072,7 +3090,7 @@
       <div class="total-box">
         <div class="money-line">
           <span>Size Price</span>
-          <strong id="sizePrice">₹899</strong>
+          <strong id="sizePrice">₹2999</strong>
         </div>
 
         <div class="money-line">
@@ -3085,7 +3103,7 @@
           <strong id="discountPrice">-₹0</strong>
         </div>
 
-        <div class="final-price" id="finalPrice">Total: ₹899</div>
+        <div class="final-price" id="finalPrice">Total: ₹2999</div>
       </div>
 
       <div class="premium-fomo">
@@ -3104,7 +3122,7 @@
   <div class="mobile-total-bar" aria-live="polite">
     <div class="mobile-total-copy">
       <small>Final Amount</small>
-      <strong class="mobile-total-price" id="mobileFinalPrice">₹899</strong>
+      <strong class="mobile-total-price" id="mobileFinalPrice">₹2999</strong>
       <span class="mobile-total-meta" id="mobileSelectedText">Medium • Single Face Portrait</span>
     </div>
 
@@ -3340,6 +3358,15 @@
       return getSelectedSizeInput().value;
     }
 
+    function getSelectedSizeKey() {
+      const sizeInput = getSelectedSizeInput();
+      return sizeInput.dataset.sizeKey || sizeInput.value.split(" - ")[0].toLowerCase();
+    }
+
+    function getSelectedSizeLabel() {
+      return getSelectedSize().split(" - ")[0];
+    }
+
     function getSizePrice() {
       return Number(getSelectedSizeInput().dataset.price);
     }
@@ -3352,8 +3379,31 @@
       return getSelectedArtInput().value;
     }
 
+    function getAddonPriceForInput(artInput) {
+      const sizeKey = getSelectedSizeKey();
+      const dynamicPrice = artInput.dataset[sizeKey + "Price"];
+      const fallbackPrice = artInput.dataset.mediumPrice || artInput.dataset.price || "0";
+      return Number(dynamicPrice ?? fallbackPrice);
+    }
+
     function getAddonPrice() {
-      return Number(getSelectedArtInput().dataset.price);
+      return getAddonPriceForInput(getSelectedArtInput());
+    }
+
+    function formatAddonPrice(price) {
+      return price === 0 ? "Base" : "+₹" + price;
+    }
+
+    function updateArtworkPriceLabels() {
+      document.querySelectorAll('input[name="artType"]').forEach(function(artInput) {
+        const price = getAddonPriceForInput(artInput);
+        const priceTag = artInput.closest(".art-option").querySelector(".art-price");
+
+        if (priceTag) {
+          priceTag.innerText = formatAddonPrice(price);
+          priceTag.setAttribute("title", "Current add-on for " + getSelectedSizeLabel() + " size");
+        }
+      });
     }
 
     function getInterest() {
@@ -3421,11 +3471,15 @@
     }
 
     function updateSummary() {
+      updateArtworkPriceLabels();
+
       const name = document.getElementById("customerName").value.trim();
       const phone = document.getElementById("customerPhone").value.trim();
       const email = document.getElementById("customerEmail").value.trim();
       const size = getSelectedSize();
+      const sizeLabel = getSelectedSizeLabel();
       const art = getSelectedArt();
+      const addonPrice = getAddonPrice();
       const interest = getInterest();
       const notes = document.getElementById("notes").value.trim();
 
@@ -3436,7 +3490,9 @@
 
       let summaryHtml =
         '<div class="summary-row"><b>Size</b><span>' + size + '</span></div>' +
-        '<div class="summary-row"><b>Interest</b><span>' + art + '</span></div>' +
+        '<div class="summary-row"><b>Artwork</b><span>' + art + '</span></div>' +
+        '<div class="summary-row"><b>Add-on</b><span>' + (addonPrice === 0 ? "Base included" : "₹" + addonPrice + " for " + sizeLabel) + '</span></div>' +
+        '<div class="summary-row"><b>Interest</b><span>' + interest + '</span></div>' +
         '<div class="summary-row"><b>Coupon</b><span>' + (activeCoupon ? activeCoupon.code : "No coupon") + '</span></div>';
 
       if (notes) {
@@ -3446,7 +3502,7 @@
       document.getElementById("summary").innerHTML = summaryHtml;
 
       document.getElementById("sizePrice").innerText = "₹" + getSizePrice();
-      document.getElementById("addonPrice").innerText = "₹" + getAddonPrice();
+      document.getElementById("addonPrice").innerText = addonPrice === 0 ? "₹0" : "₹" + addonPrice;
 
       if (discountAmount > 0) {
         document.getElementById("discountLine").style.display = "flex";
@@ -3462,7 +3518,7 @@
 
       if (mobileFinalPrice && mobileSelectedText) {
         mobileFinalPrice.innerText = "₹" + total;
-        mobileSelectedText.innerText = size.split(" - ")[0] + " • " + art;
+        mobileSelectedText.innerText = sizeLabel + " • " + art + (addonPrice > 0 ? " +" + addonPrice : "");
       }
     }
 
@@ -3505,7 +3561,7 @@
         "COUPON / PRICE\n" +
         "Coupon: " + (activeCoupon ? activeCoupon.code : "No coupon applied") + "\n" +
         "Size Price: ₹" + getSizePrice() + "\n" +
-        "Artwork Add-on: ₹" + getAddonPrice() + "\n" +
+        "Artwork Add-on (" + getSelectedSizeLabel() + " rate): ₹" + getAddonPrice() + "\n" +
         "Discount: ₹" + discountAmount + "\n" +
         "Estimated Total: ₹" + total + "\n\n" +
 
