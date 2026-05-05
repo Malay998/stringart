@@ -3051,6 +3051,422 @@
       }
     }
 
+
+    /* =========================================================
+       EXTRA PREMIUM CUSTOMER REVIEW SECTION
+       Smooth CSS-only, no heavy JS, made for laptop + mobile.
+       ========================================================= */
+
+    .reviews-section {
+      max-width: 1440px;
+      margin: -42px auto 74px;
+      padding: 0 5%;
+      position: relative;
+    }
+
+    .reviews-shell {
+      position: relative;
+      padding: 1px;
+      border-radius: 42px;
+      background:
+        linear-gradient(135deg, rgba(176,137,104,0.72), rgba(255,250,243,0.42), rgba(143,95,59,0.56));
+      box-shadow: 0 42px 112px rgba(62,47,47,0.16);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .reviews-shell::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -170px;
+      top: -220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(176,137,104,0.24), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .reviews-shell::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      right: -130px;
+      bottom: -150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,250,243,0.48), transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .reviews-inner {
+      border-radius: 41px;
+      padding: 46px;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255,255,255,0.80), transparent 25%),
+        radial-gradient(circle at 88% 12%, rgba(176,137,104,0.16), transparent 35%),
+        linear-gradient(180deg, rgba(255,250,243,0.94), rgba(248,239,229,0.78));
+      border: 1px solid rgba(255,250,243,0.68);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .reviews-inner::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 40px;
+      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.38) 42%, transparent 66%);
+      transform: translateX(-112%);
+      animation: quietShine 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .reviews-head,
+    .reviews-grid,
+    .reviews-bottom {
+      position: relative;
+      z-index: 1;
+    }
+
+    .reviews-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .review-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 0 14px;
+      margin-bottom: 16px;
+      border-radius: 999px;
+      color: var(--gold-dark);
+      background: rgba(255,250,243,0.82);
+      border: 1.5px solid rgba(176,137,104,0.24);
+      box-shadow: 0 14px 30px rgba(62,47,47,0.07);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .reviews-head h2 {
+      font-size: clamp(34px, 4.6vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.8px;
+      margin-bottom: 14px;
+    }
+
+    .reviews-head p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.82;
+    }
+
+    .rating-card {
+      min-height: 210px;
+      padding: 24px;
+      border-radius: 30px;
+      color: white;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 34%),
+        linear-gradient(135deg, #251a17, #7f5539 72%, #9a6a45);
+      border: 1.5px solid rgba(255,255,255,0.16);
+      box-shadow: 0 30px 72px rgba(47,36,32,0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rating-card::after {
+      content: "";
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 18px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,227,189,0.68), transparent);
+      animation: softLine 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .rating-card small {
+      display: block;
+      color: rgba(255,255,255,0.66);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.55px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .rating-score {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .rating-score strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 58px;
+      line-height: 0.92;
+      color: #ffe3bd;
+      letter-spacing: -1px;
+    }
+
+    .rating-score span {
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .rating-stars,
+    .review-stars {
+      color: #d9a36d;
+      letter-spacing: 2px;
+      text-shadow: 0 8px 22px rgba(143,95,59,0.22);
+      line-height: 1;
+    }
+
+    .rating-stars {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .rating-card p {
+      color: rgba(255,255,255,0.74);
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review-card {
+      min-height: 300px;
+      padding: 26px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(176,137,104,0.14), transparent 36%),
+        linear-gradient(135deg, rgba(255,250,243,0.88), rgba(255,250,243,0.62));
+      border: 2px solid rgba(222,199,174,0.84);
+      box-shadow:
+        0 24px 58px rgba(62,47,47,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.72);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.34s ease;
+    }
+
+    .review-card::before {
+      content: "“";
+      position: absolute;
+      top: -18px;
+      right: 22px;
+      font-family: 'Playfair Display', serif;
+      font-size: 132px;
+      color: rgba(176,137,104,0.11);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .review-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(176,137,104,0.58);
+      box-shadow:
+        0 34px 78px rgba(62,47,47,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.82);
+    }
+
+    .review-stars {
+      font-size: 18px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .review-text {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.78;
+      position: relative;
+      z-index: 1;
+    }
+
+    .review-person {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(222,199,174,0.7);
+      position: relative;
+      z-index: 1;
+    }
+
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: white;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      box-shadow: 0 16px 34px rgba(143,95,59,0.20);
+      font-size: 15px;
+      font-weight: 900;
+      border: 2px solid rgba(255,250,243,0.86);
+    }
+
+    .review-person b {
+      display: block;
+      color: var(--text);
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .review-person span {
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .reviews-bottom {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .review-trust-pill {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255,250,243,0.74);
+      border: 1.5px solid rgba(222,199,174,0.82);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 14px 32px rgba(62,47,47,0.06);
+    }
+
+    .review-trust-pill strong {
+      color: var(--gold-dark);
+      margin-right: 5px;
+    }
+
+    @media (max-width: 1180px) {
+      .reviews-head {
+        grid-template-columns: 1fr;
+      }
+
+      .rating-card {
+        max-width: 420px;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .reviews-section {
+        margin: -24px auto 46px;
+        padding: 0 18px;
+      }
+
+      .reviews-shell {
+        border-radius: 31px;
+      }
+
+      .reviews-inner {
+        border-radius: 30px;
+        padding: 24px 18px;
+      }
+
+      .reviews-inner::before {
+        border-radius: 29px;
+      }
+
+      .reviews-head {
+        gap: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .reviews-head h2 {
+        font-size: 34px;
+      }
+
+      .reviews-head p {
+        font-size: 13.8px;
+        line-height: 1.72;
+      }
+
+      .rating-card {
+        width: 100%;
+        min-height: unset;
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      .rating-score strong {
+        font-size: 48px;
+      }
+
+      .reviews-grid,
+      .reviews-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .review-card {
+        min-height: unset;
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      .review-card:hover {
+        transform: none;
+      }
+
+      .review-text {
+        font-size: 13.8px;
+        line-height: 1.7;
+      }
+
+      .review-trust-pill {
+        border-radius: 22px;
+        min-height: 48px;
+      }
+    }
+
+    @media (hover: none) {
+      .review-card:hover {
+        transform: none;
+      }
+    }
+
   </style>
 </head>
 
@@ -3398,6 +3814,89 @@ WhatsApp will open with your details ready. You can send the reference photo dir
     </aside>
 
   </main>
+
+
+  <section class="reviews-section" aria-labelledby="customerReviewsTitle">
+    <div class="reviews-shell">
+      <div class="reviews-inner">
+        <div class="reviews-head">
+          <div>
+            <span class="review-kicker">✦ Customer Love</span>
+            <h2 id="customerReviewsTitle">People remember how it made them feel.</h2>
+            <p>
+              A custom artwork is not just another decor piece. It becomes the photo, the story, and the emotion someone keeps looking at again and again.
+            </p>
+          </div>
+
+          <div class="rating-card" aria-label="Sample rating card">
+            <small>Sample rating preview</small>
+            <div class="rating-score">
+              <strong>5.0</strong>
+              <span>out of 5</span>
+            </div>
+            <div class="rating-stars" aria-label="5 stars">★★★★★</div>
+            <p>Handmade finish, clean guidance, and gift-ready attention from first message to final artwork.</p>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 stars">★★★★★</div>
+              <p class="review-text">
+                The detailing felt so personal. I ordered it as a birthday surprise and the final piece looked way more premium than a normal gift.
+              </p>
+            </div>
+            <div class="review-person">
+              <div class="review-avatar">AS</div>
+              <div>
+                <b>Ayesha Sharma</b>
+                <span>Birthday gift artwork</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 stars">★★★★★</div>
+              <p class="review-text">
+                The photo guidance helped a lot. I was confused between two pictures, and the final portrait came out clean, emotional, and classy.
+              </p>
+            </div>
+            <div class="review-person">
+              <div class="review-avatar">RM</div>
+              <div>
+                <b>Rohan Mehta</b>
+                <span>Couple portrait order</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 stars">★★★★★</div>
+              <p class="review-text">
+                It had that handmade warmth. The packaging, the finish, and the way the name/date was added made it feel really special.
+              </p>
+            </div>
+            <div class="review-person">
+              <div class="review-avatar">PN</div>
+              <div>
+                <b>Priya Nair</b>
+                <span>Anniversary memory piece</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="reviews-bottom" aria-label="Review highlights">
+          <div class="review-trust-pill"><strong>5★ feel</strong> premium handmade detailing</div>
+          <div class="review-trust-pill"><strong>Photo help</strong> before the artwork starts</div>
+          <div class="review-trust-pill"><strong>Gift-ready</strong> names, dates, and notes</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="mobile-total-bar" aria-live="polite">
     <div class="mobile-total-copy">
