@@ -3249,13 +3249,39 @@
     }
 
     .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
       gap: 18px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 6px 4px 22px;
+      margin: 0 -4px;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 4px;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(143,95,59,0.46) rgba(255,250,243,0.68);
+    }
+
+    .reviews-grid::-webkit-scrollbar {
+      height: 9px;
+    }
+
+    .reviews-grid::-webkit-scrollbar-track {
+      background: rgba(255,250,243,0.7);
+      border-radius: 999px;
+      border: 1px solid rgba(222,199,174,0.58);
+    }
+
+    .reviews-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border-radius: 999px;
+      border: 2px solid rgba(255,250,243,0.82);
     }
 
     .review-card {
-      min-height: 300px;
+      flex: 0 0 min(420px, calc((100% - 36px) / 3));
+      min-height: 304px;
       padding: 26px;
       border-radius: 32px;
       background:
@@ -3271,6 +3297,8 @@
       gap: 22px;
       position: relative;
       overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
       transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.34s ease;
     }
 
@@ -3294,11 +3322,30 @@
         inset 0 1px 0 rgba(255,255,255,0.82);
     }
 
-    .review-stars {
-      font-size: 18px;
+    .review-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
       margin-bottom: 16px;
       position: relative;
       z-index: 1;
+    }
+
+    .review-stars {
+      font-size: 18px;
+    }
+
+    .review-rating {
+      flex: 0 0 auto;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--gold-dark);
+      background: rgba(255,250,243,0.82);
+      border: 1.5px solid rgba(176,137,104,0.24);
+      box-shadow: 0 12px 26px rgba(62,47,47,0.07);
+      font-size: 12px;
+      font-weight: 900;
     }
 
     .review-text {
@@ -3385,8 +3432,8 @@
         max-width: 420px;
       }
 
-      .reviews-grid {
-        grid-template-columns: 1fr 1fr;
+      .review-card {
+        flex-basis: min(420px, calc((100% - 18px) / 2));
       }
     }
 
@@ -3435,13 +3482,20 @@
         font-size: 48px;
       }
 
-      .reviews-grid,
+      .reviews-grid {
+        gap: 14px;
+        padding: 4px 2px 18px;
+        margin-right: -18px;
+        padding-right: 18px;
+      }
+
       .reviews-bottom {
         grid-template-columns: 1fr;
       }
 
       .review-card {
-        min-height: unset;
+        flex-basis: min(86vw, 336px);
+        min-height: 286px;
         padding: 20px;
         border-radius: 24px;
       }
@@ -3828,21 +3882,24 @@ WhatsApp will open with your details ready. You can send the reference photo dir
             </p>
           </div>
 
-          <div class="rating-card" aria-label="Sample rating card">
+          <div class="rating-card" aria-label="Customer rating preview">
             <small>Sample rating preview</small>
             <div class="rating-score">
-              <strong>5.0</strong>
+              <strong>4.8</strong>
               <span>out of 5</span>
             </div>
-            <div class="rating-stars" aria-label="5 stars">★★★★★</div>
-            <p>Handmade finish, clean guidance, and gift-ready attention from first message to final artwork.</p>
+            <div class="rating-stars" aria-label="4.8 stars">★★★★★</div>
+            <p>Balanced review layout with premium handmade feel, photo guidance, and gift-ready attention.</p>
           </div>
         </div>
 
-        <div class="reviews-grid">
+        <div class="reviews-grid" aria-label="Scrollable customer review cards">
           <article class="review-card">
             <div>
-              <div class="review-stars" aria-label="5 stars">★★★★★</div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="5 stars">★★★★★</div>
+                <span class="review-rating">5.0</span>
+              </div>
               <p class="review-text">
                 The detailing felt so personal. I ordered it as a birthday surprise and the final piece looked way more premium than a normal gift.
               </p>
@@ -3858,7 +3915,10 @@ WhatsApp will open with your details ready. You can send the reference photo dir
 
           <article class="review-card">
             <div>
-              <div class="review-stars" aria-label="5 stars">★★★★★</div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="4.9 stars">★★★★★</div>
+                <span class="review-rating">4.9</span>
+              </div>
               <p class="review-text">
                 The photo guidance helped a lot. I was confused between two pictures, and the final portrait came out clean, emotional, and classy.
               </p>
@@ -3874,7 +3934,10 @@ WhatsApp will open with your details ready. You can send the reference photo dir
 
           <article class="review-card">
             <div>
-              <div class="review-stars" aria-label="5 stars">★★★★★</div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="4.8 stars">★★★★★</div>
+                <span class="review-rating">4.8</span>
+              </div>
               <p class="review-text">
                 It had that handmade warmth. The packaging, the finish, and the way the name/date was added made it feel really special.
               </p>
@@ -3887,10 +3950,67 @@ WhatsApp will open with your details ready. You can send the reference photo dir
               </div>
             </div>
           </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="4.7 stars">★★★★★</div>
+                <span class="review-rating">4.7</span>
+              </div>
+              <p class="review-text">
+                I liked how the order was not rushed. The updates felt proper and the final artwork had a very neat premium finish.
+              </p>
+            </div>
+            <div class="review-person">
+              <div class="review-avatar">KV</div>
+              <div>
+                <b>Karan Verma</b>
+                <span>Name and date artwork</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="4.8 stars">★★★★★</div>
+                <span class="review-rating">4.8</span>
+              </div>
+              <p class="review-text">
+                Bought it for my sister and she kept it on her desk the same day. It felt personal without being too loud or overdone.
+              </p>
+            </div>
+            <div class="review-person">
+              <div class="review-avatar">SI</div>
+              <div>
+                <b>Sana Iqbal</b>
+                <span>Personal gift order</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="4.6 stars">★★★★☆</div>
+                <span class="review-rating">4.6</span>
+              </div>
+              <p class="review-text">
+                The artwork looked beautiful and the final result was worth it. I just wish I had ordered a little earlier for gifting.
+              </p>
+            </div>
+            <div class="review-person">
+              <div class="review-avatar">DR</div>
+              <div>
+                <b>Dev Rao</b>
+                <span>Last-minute gift request</span>
+              </div>
+            </div>
+          </article>
         </div>
 
         <div class="reviews-bottom" aria-label="Review highlights">
-          <div class="review-trust-pill"><strong>5★ feel</strong> premium handmade detailing</div>
+          <div class="review-trust-pill"><strong>4.8 avg</strong> premium handmade detailing</div>
           <div class="review-trust-pill"><strong>Photo help</strong> before the artwork starts</div>
           <div class="review-trust-pill"><strong>Gift-ready</strong> names, dates, and notes</div>
         </div>
