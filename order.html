@@ -2758,6 +2758,299 @@
       58%, 100% { transform: translateX(130%); }
     }
 
+
+    /* ================= EXTRA PREMIUM ORDER UPGRADES ================= */
+    .plain-box,
+    .box,
+    .details-suite {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .plain-box::before,
+    .box::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.34) 42%, transparent 66%);
+      opacity: 0.72;
+      transform: translateX(-115%);
+      animation: quietShine 8.8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .plain-box {
+      padding: 28px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255,255,255,0.8), transparent 29%),
+        radial-gradient(circle at 90% 8%, rgba(176,137,104,0.18), transparent 34%),
+        linear-gradient(135deg, rgba(255,250,243,0.88), rgba(242,226,207,0.62));
+      border: 2px solid rgba(222,199,174,0.88);
+      box-shadow:
+        0 26px 72px rgba(62,47,47,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.72);
+    }
+
+    .size-option > span::before,
+    .art-option span::before,
+    .interest-card span::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at 80% 0%, rgba(255,255,255,0.76), transparent 27%);
+      opacity: 0;
+      transition: 0.35s ease;
+      pointer-events: none;
+    }
+
+    .size-option > span,
+    .art-option span,
+    .interest-card span {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .size-option:hover > span::before,
+    .art-option:hover span::before,
+    .interest-card:hover span::before,
+    .size-option input:checked + span::before,
+    .art-option input:checked + span::before,
+    .interest-card input:checked + span::before {
+      opacity: 1;
+    }
+
+    .art-list {
+      align-items: stretch;
+    }
+
+    .art-option {
+      transition: opacity 0.28s ease, transform 0.28s ease, filter 0.28s ease;
+    }
+
+    .art-option.option-unavailable {
+      display: none !important;
+    }
+
+    .art-option span {
+      min-height: 118px;
+    }
+
+    .art-option input:checked + span {
+      border-color: rgba(143,95,59,0.88);
+      background:
+        radial-gradient(circle at 92% 0%, rgba(255,244,223,0.92), transparent 28%),
+        linear-gradient(135deg, #fff5e7 0%, #fffaf3 55%, #f3dfc6 100%);
+    }
+
+    .art-price {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,250,243,0.74);
+      border: 1px solid rgba(176,137,104,0.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+
+    .art-option input:checked + span .art-price {
+      color: white;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      box-shadow: 0 12px 26px rgba(143,95,59,0.24);
+    }
+
+    .summary-panel {
+      border-color: rgba(176,137,104,0.34);
+      box-shadow:
+        0 34px 92px rgba(62,47,47,0.16),
+        inset 0 1px 0 rgba(255,255,255,0.72);
+    }
+
+    .summary-panel::before {
+      content: "Limited handmade slots";
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(176,137,104,0.16), rgba(255,250,243,0.72));
+      border: 1.5px solid rgba(176,137,104,0.26);
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+    }
+
+    .main-btn,
+    .coupon-btn,
+    .mobile-total-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-fomo {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.74), transparent 28%),
+        linear-gradient(135deg, rgba(176,137,104,0.16), rgba(255,250,243,0.68));
+    }
+
+    @media (max-width: 768px) {
+      .plain-box {
+        padding: 16px;
+        border-radius: 24px;
+      }
+
+      .art-option span {
+        min-height: unset;
+      }
+
+      .art-price {
+        padding: 7px 10px;
+      }
+    }
+
+  
+
+    /* =========================================================
+       FINAL RESPONSIVE + SELECTION POLISH
+       Added for stronger selected-state feedback and smoother mobile/laptop layout.
+       ========================================================= */
+
+    .size-option > span,
+    .art-option span,
+    .interest-card span {
+      transform-origin: center;
+      backface-visibility: hidden;
+    }
+
+    .size-option input:checked + span,
+    .art-option input:checked + span,
+    .interest-card input:checked + span {
+      transform: translateY(-7px) scale(1.018);
+      border-color: rgba(143,95,59,0.98) !important;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(255,255,255,0.98), transparent 22%),
+        radial-gradient(circle at 18% 0%, rgba(226,183,137,0.28), transparent 34%),
+        linear-gradient(135deg, #fff2df 0%, #fffaf3 52%, #f1dcc2 100%) !important;
+      box-shadow:
+        0 30px 78px rgba(143,95,59,0.24),
+        0 0 0 1px rgba(255,250,243,0.72) inset,
+        0 0 0 6px rgba(176,137,104,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.9) !important;
+    }
+
+    .size-option input:checked + span b,
+    .art-option input:checked + span b,
+    .interest-card input:checked + span b {
+      color: #2c1e18;
+    }
+
+    .size-option input:checked + span small,
+    .art-option input:checked + span small,
+    .interest-card input:checked + span small {
+      color: #6c4e40;
+    }
+
+    .size-option input:checked + span strong {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      box-shadow: 0 14px 30px rgba(143,95,59,0.28);
+    }
+
+    .art-option input:checked + span .art-icon,
+    .interest-card input:checked + span b::first-letter {
+      transform: scale(1.05);
+    }
+
+    .art-option input:checked + span .art-icon {
+      color: white;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.34), transparent 42%),
+        linear-gradient(135deg, var(--gold), var(--gold-dark));
+      box-shadow: 0 15px 30px rgba(143,95,59,0.26);
+      border-color: rgba(255,250,243,0.6);
+    }
+
+    .art-option input:checked + span .art-price {
+      color: white !important;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+      border-color: rgba(255,250,243,0.38);
+      box-shadow: 0 14px 30px rgba(143,95,59,0.28) !important;
+    }
+
+    .size-option input:focus-visible + span,
+    .art-option input:focus-visible + span,
+    .interest-card input:focus-visible + span {
+      outline: 4px solid rgba(176,137,104,0.24);
+      outline-offset: 4px;
+    }
+
+    .art-option.option-unavailable {
+      display: none !important;
+    }
+
+    .art-list {
+      transition: 0.28s ease;
+    }
+
+    @media (min-width: 901px) and (max-width: 1320px) {
+      .order-wrap {
+        grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.55fr);
+        gap: 28px;
+      }
+
+      .size-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .art-list {
+        grid-template-columns: 1fr;
+      }
+
+      .art-option span {
+        min-height: 104px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .size-option input:checked + span,
+      .art-option input:checked + span,
+      .interest-card input:checked + span {
+        transform: translateY(-3px) scale(1.006);
+        box-shadow:
+          0 18px 42px rgba(143,95,59,0.20),
+          0 0 0 4px rgba(176,137,104,0.09),
+          inset 0 1px 0 rgba(255,255,255,0.86) !important;
+      }
+
+      .size-option input:checked + span strong {
+        padding: 7px 11px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .art-option input:checked + span,
+      .size-option input:checked + span {
+        transform: none;
+      }
+
+      .art-option span {
+        align-items: start;
+      }
+
+      .art-price {
+        width: fit-content;
+      }
+    }
+
   </style>
 </head>
 
@@ -2795,10 +3088,9 @@
 
   <section class="hero">
     <span class="tag">Custom Handmade Artwork</span>
-    <h1>Turn Your Favourite Memory Into Premium Art</h1>
+    <h1>Reserve a Handmade Memory, Made Just for You</h1>
     <p class="subtitle">
-      Choose your size, select what kind of artwork you want, share your details,
-      and send everything directly on WhatsApp.
+      Choose the circle size, pick the emotion behind the artwork, and send a clean premium request directly on WhatsApp.
     </p>
   </section>
 
@@ -2823,7 +3115,7 @@
       <div class="plain-box">
         <h2 class="section-title">Choose Your Size</h2>
         <p class="section-text">
-          Select the size you want. The final amount also depends on artwork type and detailing.
+          Pick the circle size first. Medium is intentionally kept the strongest value so most people can start with a premium-looking piece without overthinking.
         </p>
 
         <div class="size-grid">
@@ -2852,24 +3144,24 @@
           </label>
 
           <label class="size-option">
-            <input type="radio" name="size" value="Large - 24 inch" data-size-key="large" data-price="3999" onchange="updateSummary()">
+            <input type="radio" name="size" value="Large - 24 inch" data-size-key="large" data-price="4299" onchange="updateSummary()">
             <span>
               <div>
                 <b>Large</b>
                 <small>24 inch<br>Best for detailed wall art.</small>
               </div>
-              <strong>₹3999</strong>
+              <strong>₹4299</strong>
             </span>
           </label>
 
           <label class="size-option">
-            <input type="radio" name="size" value="XL - 30 inch" data-size-key="xl" data-price="4999" onchange="updateSummary()">
+            <input type="radio" name="size" value="XL - 30 inch" data-size-key="xl" data-price="5499" onchange="updateSummary()">
             <span>
               <div>
                 <b>XL</b>
                 <small>30 inch<br>For a grand premium display.</small>
               </div>
-              <strong>₹4999</strong>
+              <strong>₹5499</strong>
             </span>
           </label>
 
@@ -2877,9 +3169,9 @@
       </div>
 
       <div class="box">
-        <h2 class="section-title">What exactly do you want?</h2>
+        <h2 class="section-title">Choose the story you want to turn into art</h2>
         <p class="section-text">
-          Select the artwork style you are looking for. Add-on prices now change fairly based on the size selected, because a larger piece needs more thread, pins, time, and detailing.
+          Select the artwork style. Options that do not suit the chosen size will disappear automatically, so the final request stays clean, realistic, and premium.
         </p>
 
         <div class="art-list">
@@ -2892,7 +3184,7 @@
               <div class="art-icon">👤</div>
               <div class="art-copy">
                 <b>Single Face Portrait</b>
-                <small>Best for one person, clean and elegant.</small>
+                <small>Clean, timeless, and perfect for one person.</small>
               </div>
               <div class="art-price">Base</div>
             </span>
@@ -2900,27 +3192,27 @@
 
           <label class="art-option">
             <input type="radio" name="artType" value="2 Face Portrait"
-              data-small-price="300" data-medium-price="450" data-large-price="650" data-xl-price="850"
+              data-small-price="650" data-medium-price="850" data-large-price="1200" data-xl-price="1500"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">👥</div>
               <div class="art-copy">
                 <b>2 Face Portrait</b>
-                <small>For couples, siblings, friends, or parents.</small>
+                <small>For couples, siblings, friends, or parent-child memories.</small>
               </div>
-              <div class="art-price">+₹450</div>
+              <div class="art-price">+₹550</div>
             </span>
           </label>
 
           <label class="art-option">
             <input type="radio" name="artType" value="3 Face Portrait"
-              data-small-price="550" data-medium-price="750" data-large-price="1050" data-xl-price="1350"
+              data-small-price="" data-medium-price="1050" data-large-price="1550" data-xl-price="2150"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">👨‍👩‍👧</div>
               <div class="art-copy">
                 <b>3 Face Portrait</b>
-                <small>Great for small family or trio artwork.</small>
+                <small>For trios and small-family memories with richer detailing.</small>
               </div>
               <div class="art-price">+₹750</div>
             </span>
@@ -2928,13 +3220,13 @@
 
           <label class="art-option">
             <input type="radio" name="artType" value="4 Face Portrait"
-              data-small-price="750" data-medium-price="1050" data-large-price="1450" data-xl-price="1850"
+              data-small-price="" data-medium-price="" data-large-price="2200" data-xl-price="2900"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">👨‍👩‍👧‍👦</div>
               <div class="art-copy">
                 <b>4 Face Portrait</b>
-                <small>Family style artwork with more detailing.</small>
+                <small>A premium family piece with more emotion, pins, and detailing.</small>
               </div>
               <div class="art-price">+₹1050</div>
             </span>
@@ -2942,13 +3234,13 @@
 
           <label class="art-option">
             <input type="radio" name="artType" value="Couple Portrait in Heart Shape"
-              data-small-price="450" data-medium-price="650" data-large-price="900" data-xl-price="1150"
+              data-small-price="600" data-medium-price="900" data-large-price="1300" data-xl-price="1800"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">♥</div>
               <div class="art-copy">
                 <b>Couple Heart Portrait</b>
-                <small>Romantic heart-shape concept for couples.</small>
+                <small>A romantic couple concept made for anniversaries and surprises.</small>
               </div>
               <div class="art-price">+₹650</div>
             </span>
@@ -2956,13 +3248,13 @@
 
           <label class="art-option">
             <input type="radio" name="artType" value="Pet Portrait"
-              data-small-price="300" data-medium-price="450" data-large-price="650" data-xl-price="850"
+              data-small-price="500" data-medium-price="700" data-large-price="1000" data-xl-price="1400"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">🐾</div>
               <div class="art-copy">
                 <b>Pet Portrait</b>
-                <small>For dog, cat, or any pet memory.</small>
+                <small>For dogs, cats, and the little souls who became family.</small>
               </div>
               <div class="art-price">+₹450</div>
             </span>
@@ -2970,13 +3262,13 @@
 
           <label class="art-option">
             <input type="radio" name="artType" value="Name / Text Artwork"
-              data-small-price="200" data-medium-price="300" data-large-price="450" data-xl-price="600"
+              data-small-price="350" data-medium-price="450" data-large-price="650" data-xl-price="850"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">✦</div>
               <div class="art-copy">
                 <b>Name / Text Artwork</b>
-                <small>Name, date, quote, initials, or message.</small>
+                <small>Names, dates, initials, quotes, or a personal message.</small>
               </div>
               <div class="art-price">+₹300</div>
             </span>
@@ -2984,13 +3276,13 @@
 
           <label class="art-option">
             <input type="radio" name="artType" value="Logo / Brand Artwork"
-              data-small-price="600" data-medium-price="850" data-large-price="1200" data-xl-price="1550"
+              data-small-price="900" data-medium-price="1200" data-large-price="1700" data-xl-price="2300"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">◆</div>
               <div class="art-copy">
                 <b>Logo / Brand Artwork</b>
-                <small>For business, studio, cafe, or room decor.</small>
+                <small>For studios, cafes, businesses, or clean room decor.</small>
               </div>
               <div class="art-price">+₹850</div>
             </span>
@@ -2998,13 +3290,13 @@
 
           <label class="art-option">
             <input type="radio" name="artType" value="Something Custom / Creative"
-              data-small-price="400" data-medium-price="600" data-large-price="850" data-xl-price="1100"
+              data-small-price="700" data-medium-price="900" data-large-price="1300" data-xl-price="1700"
               onchange="updateSummary()">
             <span>
               <div class="art-icon">✨</div>
               <div class="art-copy">
                 <b>Something Custom</b>
-                <small>Have a unique idea? Share it with me.</small>
+                <small>Have a unique idea? I’ll help shape it into a clean concept.</small>
               </div>
               <div class="art-price">+₹600</div>
             </span>
@@ -3051,18 +3343,6 @@
           </div>
         </div>
       </div>
-
-      <div class="box">
-        <label>Upload Photo / Logo / File</label>
-        <div class="file-box">
-          <input type="file" id="referenceFile" accept="*/*" onchange="updateSummary()">
-          <p class="help-text">
-            Upload any file here. When WhatsApp opens, please attach the same file there as a document/photo.
-            If you are not sure which photo will look best, I’ll help you choose personally.
-          </p>
-        </div>
-      </div>
-
       <div class="box">
         <label>Coupon Code</label>
         <div class="coupon-row">
@@ -3113,7 +3393,7 @@
       <button class="main-btn" type="button" onclick="orderNow()">Send to WhatsApp</button>
 
       <p class="tiny-note">
-        WhatsApp will open with your details ready. Attach your selected file there before sending.
+WhatsApp will open with your details ready. You can send the reference photo directly there.
       </p>
     </aside>
 
@@ -3128,104 +3408,6 @@
 
     <button type="button" class="mobile-total-btn" onclick="orderNow()">WhatsApp</button>
   </div>
-
-  <section class="bottom-support-section">
-    <div class="support-premium-shell">
-      <div class="guidance-panel">
-        <div class="guidance-top">
-          <div>
-            <span class="panel-kicker">✦ Before you send</span>
-            <h3>Photo help, gifting, and clean guidance</h3>
-            <p>
-              These small details make the artwork feel premium instead of rushed. Add anything important in notes and I’ll guide you properly.
-            </p>
-          </div>
-          <div class="guidance-pill">Premium finishing support</div>
-        </div>
-
-        <div class="guidance-grid">
-          <div class="guidance-card">
-            <b>Photo Help</b>
-            Not sure which reference photo will look best? Send options and I’ll help choose the cleanest one.
-          </div>
-
-          <div class="guidance-card">
-            <b>Gift Ready</b>
-            Mention the date, name, message, or surprise idea so the artwork feels personal.
-          </div>
-
-          <div class="guidance-card">
-            <b>Smooth WhatsApp</b>
-            Your selected size, artwork interest, coupon, and notes are prepared neatly before sending.
-          </div>
-        </div>
-      </div>
-
-      <div class="support-heading">
-        <div>
-          <span class="panel-kicker">✦ Final touch</span>
-          <h2>What are you here for?</h2>
-          <p>
-            Before you leave, choose what you need from me. Order now, save it for later,
-            or just support the artwork — everything still gets sent cleanly to WhatsApp.
-          </p>
-        </div>
-
-        <div class="support-badge">Choose your intent</div>
-      </div>
-
-      <div class="bottom-support-grid">
-        <div class="interest-panel">
-          <span class="panel-kicker">Choose your intent</span>
-
-          <div class="interest-grid">
-            <label class="interest-card">
-              <input type="radio" name="interest" value="Ready to order now" checked onchange="updateSummary()">
-              <span>
-                <b>Ready to Order</b>
-                <small>I like this and want to discuss my artwork now.</small>
-              </span>
-            </label>
-
-            <label class="interest-card">
-              <input type="radio" name="interest" value="Interested for future" onchange="updateSummary()">
-              <span>
-                <b>Maybe Later</b>
-                <small>I am interested, but I may order in the future.</small>
-              </span>
-            </label>
-
-            <label class="interest-card">
-              <input type="radio" name="interest" value="Just appreciating the work / showing support" onchange="updateSummary()">
-              <span>
-                <b>Show Support</b>
-                <small>I like the work and wanted to appreciate or support.</small>
-              </span>
-            </label>
-          </div>
-
-        </div>
-
-        <div class="artist-support-panel">
-          <span class="panel-kicker">Support section</span>
-
-          <div class="support-box">
-            <div class="support-content">
-              <h3>Support the Artist</h3>
-              <p>
-                Not ordering right now? Your support still means a lot.
-                Even a small help like ₹1 genuinely motivates me to keep creating more handmade art.
-              </p>
-            </div>
-
-            <div class="qr-space">
-              <img src="qr.jpeg" alt="Support QR Code">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer class="premium-footer">
     <div class="footer-inner">
@@ -3384,11 +3566,47 @@
       return getSelectedArtInput().value;
     }
 
-    function getAddonPriceForInput(artInput) {
+    function isArtAvailableForCurrentSize(artInput) {
       const sizeKey = getSelectedSizeKey();
       const dynamicPrice = artInput.dataset[sizeKey + "Price"];
-      const fallbackPrice = artInput.dataset.mediumPrice || artInput.dataset.price || "0";
-      return Number(dynamicPrice ?? fallbackPrice);
+      return dynamicPrice !== undefined && dynamicPrice !== "";
+    }
+
+    function getAddonPriceForInput(artInput) {
+      if (!artInput || !isArtAvailableForCurrentSize(artInput)) return 0;
+      const sizeKey = getSelectedSizeKey();
+      const dynamicPrice = artInput.dataset[sizeKey + "Price"];
+      return Number(dynamicPrice || "0");
+    }
+
+    function updateArtworkAvailability() {
+      const artInputs = Array.from(document.querySelectorAll('input[name="artType"]'));
+      let selectedStillAvailable = true;
+
+      artInputs.forEach(function(artInput) {
+        const available = isArtAvailableForCurrentSize(artInput);
+        const card = artInput.closest(".art-option");
+
+        artInput.disabled = !available;
+        if (card) {
+          card.classList.toggle("option-unavailable", !available);
+          card.setAttribute("aria-hidden", available ? "false" : "true");
+        }
+
+        if (artInput.checked && !available) {
+          selectedStillAvailable = false;
+        }
+      });
+
+      if (!selectedStillAvailable) {
+        const firstAvailable = artInputs.find(function(artInput) {
+          return !artInput.disabled;
+        });
+
+        if (firstAvailable) {
+          firstAvailable.checked = true;
+        }
+      }
     }
 
     function getAddonPrice() {
@@ -3401,18 +3619,19 @@
 
     function updateArtworkPriceLabels() {
       document.querySelectorAll('input[name="artType"]').forEach(function(artInput) {
-        const price = getAddonPriceForInput(artInput);
         const priceTag = artInput.closest(".art-option").querySelector(".art-price");
+        if (!priceTag) return;
 
-        if (priceTag) {
-          priceTag.innerText = formatAddonPrice(price);
-          priceTag.setAttribute("title", "Current add-on for " + getSelectedSizeLabel() + " size");
+        if (!isArtAvailableForCurrentSize(artInput)) {
+          priceTag.innerText = "Not for this size";
+          priceTag.setAttribute("title", "This artwork type needs a larger size");
+          return;
         }
-      });
-    }
 
-    function getInterest() {
-      return document.querySelector('input[name="interest"]:checked').value;
+        const price = getAddonPriceForInput(artInput);
+        priceTag.innerText = formatAddonPrice(price);
+        priceTag.setAttribute("title", "Current add-on for " + getSelectedSizeLabel() + " size");
+      });
     }
 
     function getSubtotal() {
@@ -3476,6 +3695,7 @@
     }
 
     function updateSummary() {
+      updateArtworkAvailability();
       updateArtworkPriceLabels();
 
       const name = document.getElementById("customerName").value.trim();
@@ -3485,19 +3705,13 @@
       const sizeLabel = getSelectedSizeLabel();
       const art = getSelectedArt();
       const addonPrice = getAddonPrice();
-      const interest = getInterest();
       const notes = document.getElementById("notes").value.trim();
-
-      const fileInput = document.getElementById("referenceFile");
-      const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : "No file selected yet";
-
       const total = getTotal();
 
       let summaryHtml =
         '<div class="summary-row"><b>Size</b><span>' + size + '</span></div>' +
         '<div class="summary-row"><b>Artwork</b><span>' + art + '</span></div>' +
         '<div class="summary-row"><b>Add-on</b><span>' + (addonPrice === 0 ? "Base included" : "₹" + addonPrice + " for " + sizeLabel) + '</span></div>' +
-        '<div class="summary-row"><b>Interest</b><span>' + interest + '</span></div>' +
         '<div class="summary-row"><b>Coupon</b><span>' + (activeCoupon ? activeCoupon.code : "No coupon") + '</span></div>';
 
       if (notes) {
@@ -3533,12 +3747,7 @@
       const email = document.getElementById("customerEmail").value.trim();
       const size = getSelectedSize();
       const art = getSelectedArt();
-      const interest = getInterest();
       const notes = document.getElementById("notes").value.trim();
-
-      const fileInput = document.getElementById("referenceFile");
-      const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : "No file selected";
-
       const total = getTotal();
 
       if (name === "" || phone === "") {
@@ -3552,16 +3761,13 @@
 
         "ARTWORK REQUEST\n" +
         "Size: " + size + "\n" +
-        "Artwork Type: " + art + "\n" +
-        "Selected File: " + fileName + "\n\n" +
+        "Artwork Type: " + art + "\n\n" +
 
         "CUSTOMER DETAILS\n" +
         "Name: " + name + "\n" +
         "WhatsApp Number: " + phone + "\n" +
         "Email: " + (email || "Not provided") + "\n\n" +
 
-        "INTEREST LEVEL\n" +
-        interest + "\n\n" +
 
         "COUPON / PRICE\n" +
         "Coupon: " + (activeCoupon ? activeCoupon.code : "No coupon applied") + "\n" +
@@ -3573,8 +3779,7 @@
         "SPECIAL INSTRUCTIONS\n" +
         (notes || "No special instructions added.") + "\n\n" +
 
-        "Please guide me with the next steps. If needed, help me choose the best photo.\n" +
-        "I will attach the reference file/photo here on WhatsApp.";
+        "Please guide me with the next steps. I will send the reference photo directly here on WhatsApp.";
 
       const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
       window.open(url, "_blank");

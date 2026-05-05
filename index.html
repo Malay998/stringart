@@ -1357,6 +1357,355 @@
       font-size: 13px;
     }
 
+
+    /* =============================
+       FINAL TOUCH INTENT + SUPPORT QR
+       ============================= */
+
+    .final-touch {
+      margin: 38px max(20px, 6vw) 82px;
+      padding: 1px;
+      border-radius: 44px;
+      background: linear-gradient(135deg, rgba(176,137,104,0.78), rgba(255,250,243,0.28), rgba(143,95,59,0.58));
+      box-shadow: 0 46px 118px rgba(62,47,47,0.18);
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .final-touch::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -180px;
+      top: -220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.20), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .final-touch::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -130px;
+      bottom: -150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(215,179,143,0.26), transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .final-touch-inner {
+      border-radius: 43px;
+      padding: 76px 44px 44px;
+      color: white;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(255,255,255,0.13), transparent 32%),
+        radial-gradient(circle at 90% 18%, rgba(215,179,143,0.16), transparent 34%),
+        linear-gradient(135deg, #251a17, #7f5539);
+      border: 1px solid rgba(255,255,255,0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-touch-inner::before {
+      content: "";
+      position: absolute;
+      inset: -65%;
+      background: conic-gradient(from 140deg, transparent, rgba(255,255,255,0.15), transparent 22%);
+      animation: slowSpin 17s linear infinite;
+      pointer-events: none;
+    }
+
+    .final-touch-head,
+    .intent-grid,
+    .support-panel {
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-touch-head {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .final-touch-head h2 {
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 1.02;
+      margin-bottom: 18px;
+    }
+
+    .final-touch-head p {
+      max-width: 690px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.76);
+      line-height: 1.82;
+      font-size: 15.5px;
+    }
+
+    .intent-grid {
+      max-width: 1120px;
+      margin: 38px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .intent-card {
+      min-height: 284px;
+      padding: 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      background: rgba(255,250,243,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 22px 56px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+    }
+
+    .intent-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 42%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .intent-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255,250,243,0.14);
+      border-color: rgba(243,214,181,0.48);
+      box-shadow: 0 34px 78px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.16);
+    }
+
+    .intent-card:hover::before {
+      opacity: 1;
+    }
+
+    .intent-card.featured {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.17), transparent 38%),
+        linear-gradient(135deg, rgba(176,137,104,0.92), rgba(143,95,59,0.82));
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .intent-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .intent-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: #fff7ed;
+      background: rgba(255,250,243,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+
+    .intent-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255,250,243,0.13);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.72);
+      font-size: 11px;
+      letter-spacing: 1.35px;
+      text-transform: uppercase;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .intent-card h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intent-card p {
+      color: rgba(255,255,255,0.76);
+      line-height: 1.72;
+      font-size: 14.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intent-action {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      color: #fff7ed;
+      background: rgba(255,250,243,0.13);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: 13px;
+      font-weight: 900;
+      transition: transform 0.3s ease, background 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intent-card:hover .intent-action {
+      transform: translateX(4px);
+      background: rgba(255,250,243,0.19);
+    }
+
+    .support-panel {
+      max-width: 1120px;
+      margin: 22px auto 0;
+      padding: 30px;
+      border-radius: 34px;
+      background: rgba(255,250,243,0.12);
+      border: 1px solid rgba(255,255,255,0.17);
+      box-shadow: 0 28px 70px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.13);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .support-copy .support-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 32px;
+      padding: 0 13px;
+      border-radius: 999px;
+      color: #f3d6b5;
+      background: rgba(255,250,243,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .support-copy h3 {
+      font-size: clamp(30px, 3.4vw, 48px);
+      line-height: 1.06;
+      margin-bottom: 14px;
+    }
+
+    .support-copy p {
+      color: rgba(255,255,255,0.76);
+      font-size: 15px;
+      line-height: 1.82;
+      max-width: 640px;
+      margin-bottom: 18px;
+    }
+
+    .support-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .support-points span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: rgba(255,250,243,0.11);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: rgba(255,255,255,0.72);
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+
+    .qr-card {
+      justify-self: end;
+      width: min(100%, 340px);
+      padding: 16px;
+      border-radius: 32px;
+      background: rgba(255,250,243,0.92);
+      border: 1px solid rgba(255,255,255,0.58);
+      color: var(--text);
+      box-shadow: 0 28px 72px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.68);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .qr-card::before {
+      content: "Support QR Code";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(176,137,104,0.14);
+      color: var(--gold-dark);
+      font-size: 10.5px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .qr-frame {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      padding: 12px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid rgba(229,207,185,0.76);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .qr-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .qr-card p {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
     .premium-footer {
       position: relative;
       margin: 0 max(20px, 6vw) 34px;
@@ -1829,6 +2178,90 @@
       }
     }
 
+
+
+    @media (max-width: 980px) {
+      .final-touch {
+        margin: 24px 20px 92px;
+        border-radius: 32px;
+      }
+
+      .final-touch-inner {
+        padding: 52px 24px 26px;
+        border-radius: 31px;
+      }
+
+      .intent-grid,
+      .support-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .intent-card {
+        min-height: 238px;
+        border-radius: 26px;
+      }
+
+      .support-panel {
+        padding: 24px;
+        border-radius: 28px;
+        text-align: center;
+      }
+
+      .support-points {
+        justify-content: center;
+      }
+
+      .qr-card {
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .final-touch {
+        margin-inline: 16px;
+      }
+
+      .final-touch-head h2 {
+        font-size: 40px;
+      }
+
+      .final-touch-head p,
+      .support-copy p {
+        font-size: 14px;
+      }
+
+      .intent-grid {
+        gap: 14px;
+      }
+
+      .intent-card {
+        min-height: 218px;
+        padding: 22px;
+      }
+
+      .intent-card h3 {
+        font-size: 26px;
+      }
+
+      .intent-tag {
+        font-size: 9.8px;
+        letter-spacing: 1px;
+      }
+
+      .support-panel {
+        padding: 20px;
+      }
+
+      .qr-card {
+        padding: 12px;
+        border-radius: 26px;
+      }
+
+      .qr-frame {
+        border-radius: 20px;
+      }
+    }
+
     @media (hover: none) {
       .nav-link:hover,
       .btn:hover,
@@ -1933,10 +2366,362 @@
       0%, 42% { transform: translateX(-120%); }
       58%, 100% { transform: translateX(120%); }
     }
+
+
+    /* =============================
+       FINAL TOUCH V2 + PHONE-FIRST HERO FIX
+       ============================= */
+
+    .intent-button {
+      border: 0;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .final-touch {
+      scroll-margin-top: calc(var(--nav-h) + 18px);
+    }
+
+    .final-mini-nav,
+    .support-topbar,
+    .support-switches,
+    .qr-actions {
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-mini-nav {
+      max-width: 1120px;
+      margin: 18px auto 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .final-mini-nav a,
+    .support-switches a,
+    .support-back,
+    .qr-action {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255,250,243,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 900;
+      transition: transform 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .final-mini-nav a:hover,
+    .support-switches a:hover,
+    .support-back:hover,
+    .qr-action:hover {
+      transform: translateY(-2px);
+      background: rgba(255,250,243,0.18);
+      border-color: rgba(243,214,181,0.42);
+    }
+
+    .support-panel {
+      display: none;
+      grid-template-columns: 1fr 0.92fr;
+      grid-template-areas:
+        "topbar topbar"
+        "copy qr";
+      scroll-margin-top: calc(var(--nav-h) + 18px);
+    }
+
+    .final-touch.support-open .support-panel {
+      display: grid;
+      animation: supportReveal 0.42s ease both;
+    }
+
+    .support-topbar {
+      grid-area: topbar;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.13);
+      margin-bottom: 2px;
+    }
+
+    .support-back {
+      background: rgba(255,250,243,0.18);
+      color: #fff7ed;
+    }
+
+    .support-switches {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .support-copy {
+      grid-area: copy;
+    }
+
+    .qr-card {
+      grid-area: qr;
+    }
+
+    .qr-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+      margin-top: 13px;
+    }
+
+    .qr-action {
+      width: 100%;
+      min-height: 44px;
+      color: var(--text);
+      background: rgba(176,137,104,0.12);
+      border-color: rgba(176,137,104,0.20);
+    }
+
+    .qr-action.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--deep), var(--gold-dark));
+      border-color: rgba(143,95,59,0.28);
+      box-shadow: 0 14px 30px rgba(47,36,32,0.16);
+    }
+
+    .support-panel[aria-hidden="true"] {
+      pointer-events: none;
+    }
+
+    .final-touch.support-open .support-panel[aria-hidden="false"] {
+      pointer-events: auto;
+    }
+
+    @keyframes supportReveal {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 680px) {
+      .hero {
+        padding: 42px 18px 42px;
+        gap: 26px;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 11.5vw, 54px);
+        line-height: 1;
+      }
+
+      .hero-text {
+        margin-bottom: 24px;
+      }
+
+      .hero-art {
+        min-height: auto !important;
+        display: grid;
+        gap: 12px;
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+        perspective: none;
+      }
+
+      .portrait-frame {
+        position: relative !important;
+        inset: auto !important;
+        width: 100%;
+        height: min(430px, 92vw);
+        border-radius: 32px;
+        transform: none !important;
+        order: 1;
+        margin: 0 auto 4px;
+      }
+
+      .portrait-inner {
+        border-radius: 31px;
+      }
+
+      .portrait-label {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 16px;
+        border-radius: 22px;
+      }
+
+      .portrait-label small {
+        font-size: 10px;
+        letter-spacing: 1.35px;
+        margin-bottom: 5px;
+      }
+
+      .portrait-label h3 {
+        font-size: 23px;
+        line-height: 1.08;
+      }
+
+      .portrait-label p {
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .float-card,
+      .float-card.one,
+      .float-card.two,
+      .float-card.three {
+        position: relative !important;
+        inset: auto !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        max-width: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 14px 15px;
+        border-radius: 20px;
+        animation: none !important;
+        display: grid !important;
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .float-card.one { order: 2; }
+      .float-card.two { order: 3; }
+      .float-card.three { order: 4; }
+
+      .float-card strong {
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+
+      .float-card span {
+        font-size: 12px;
+        line-height: 1.45;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .support-panel {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "topbar"
+          "copy"
+          "qr";
+      }
+
+      .support-topbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .support-back,
+      .support-switches a {
+        width: 100%;
+      }
+
+      .support-switches {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .final-touch {
+        margin: 24px 14px 98px;
+        border-radius: 30px;
+      }
+
+      .final-touch-inner {
+        padding: 42px 16px 20px;
+        border-radius: 29px;
+      }
+
+      .final-touch-head {
+        text-align: left;
+      }
+
+      .final-touch-head h2 {
+        font-size: 38px;
+      }
+
+      .intent-grid {
+        margin-top: 24px;
+      }
+
+      .intent-card {
+        min-height: auto;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .intent-action {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .final-mini-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+      }
+
+      .final-mini-nav a {
+        min-height: 40px;
+        padding: 0 10px;
+        font-size: 11.2px;
+      }
+
+      .support-panel {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 24px;
+        gap: 18px;
+        text-align: left;
+      }
+
+      .support-copy h3 {
+        font-size: 32px;
+      }
+
+      .support-points {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: stretch;
+      }
+
+      .support-points span {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .support-switches {
+        grid-template-columns: 1fr;
+      }
+
+      .qr-card {
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
 
-<body data-page="home">
+<body data-page="home" id="top">
   <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
   <nav class="navbar" aria-label="Main navigation">
@@ -2072,7 +2857,7 @@
       <span class="section-kicker">The premium difference</span>
       <h2>It should feel special before it even reaches them.</h2>
       <p class="section-subtitle">
-        The goal is not just to sell a portrait. The goal is to help your customer feel like they are choosing something personal, thoughtful, and worth keeping.
+        Every detail is kept simple, personal, and thoughtful — so choosing an artwork feels meaningful from the first click.
       </p>
     </div>
 
@@ -2105,7 +2890,7 @@
       <div class="proof-card reveal">
         <strong>0</strong>
         <h3>Generic gifting feel</h3>
-        <p>The website keeps reminding them this is made from their real story, not random decor.</p>
+        <p>Every detail is built around their real story, not random decor or a last-minute gift.</p>
       </div>
       <div class="proof-card reveal">
         <strong>∞</strong>
@@ -2204,8 +2989,8 @@
   <section class="section">
     <div class="section-head reveal">
       <span class="section-kicker">Visual direction</span>
-      <h2>Make the gallery feel expensive, even before you add real photos.</h2>
-      <p class="section-subtitle">These premium placeholders can later be replaced with your actual artwork photos. The layout is already ready for a high-end gallery feel.</p>
+      <h2>A glimpse of what your memory can become.</h2>
+      <p class="section-subtitle">From couple portraits to family memories, the gallery helps you imagine how personal the final handmade piece can feel.</p>
     </div>
 
     <div class="gallery-showcase">
@@ -2235,9 +3020,9 @@
 
   <section class="section">
     <div class="section-head reveal">
-      <span class="section-kicker">Why it converts</span>
+      <span class="section-kicker">Why it feels different</span>
       <h2>Because people don’t buy art first. They buy meaning.</h2>
-      <p class="section-subtitle">This section gently reminds customers why a handmade memory feels more valuable than a random gift.</p>
+      <p class="section-subtitle">A handmade piece feels different because it carries time, patience, and a real memory — not just another quick gift.</p>
     </div>
 
     <div class="comparison-wrap">
@@ -2263,15 +3048,108 @@
     </div>
   </section>
 
-  <section class="final-cta reveal">
-    <div class="final-cta-inner">
-      <span class="section-kicker" style="color:#f3d6b5;">Reserve your artwork</span>
-      <h2>The photo is already in your gallery. Let’s turn it into something they can keep.</h2>
-      <p>
-        Start with the order form, choose the basic details, and send your request on WhatsApp. If you are confused about photo, size, or style, I’ll guide you personally.
-      </p>
-      <a href="order.html" class="btn btn-primary">Create Yours Now →</a>
-      <div class="cta-note">Best for birthdays, anniversaries, farewell gifts, couple gifts, family memories, and pet portraits.</div>
+  <section class="final-touch reveal" id="final-touch">
+    <div class="final-touch-inner">
+      <div class="final-touch-head" id="intent-choice">
+        <span class="section-kicker" style="color:#f3d6b5;">Final touch</span>
+        <h2>What are you here for?</h2>
+        <p>
+          Before you leave, choose what you need from me. Order now, save it for later, or support the artwork — every option is clean, guided, and easy to change.
+        </p>
+      </div>
+
+      <div class="intent-grid" aria-label="Choose your intent">
+        <a
+          href="https://api.whatsapp.com/send?text=Hi%20MalayPaul%20Arts%2C%20I%20am%20ready%20to%20order%20and%20want%20to%20discuss%20my%20artwork%20now."
+          class="intent-card featured"
+          data-wa-message="Hi MalayPaul Arts, I am ready to order and want to discuss my artwork now."
+        >
+          <div class="intent-top">
+            <span class="intent-number">01</span>
+            <span class="intent-tag">Order now</span>
+          </div>
+          <div>
+            <h3>Ready to Order</h3>
+            <p>I like this and want to discuss my artwork now.</p>
+          </div>
+          <span class="intent-action">Send on WhatsApp →</span>
+        </a>
+
+        <a
+          href="https://api.whatsapp.com/send?text=Hi%20MalayPaul%20Arts%2C%20I%20am%20interested%20in%20your%20artwork%2C%20but%20I%20may%20order%20in%20the%20future.%20Please%20share%20details%20with%20me."
+          class="intent-card"
+          data-wa-message="Hi MalayPaul Arts, I am interested in your artwork, but I may order in the future. Please share details with me."
+        >
+          <div class="intent-top">
+            <span class="intent-number">02</span>
+            <span class="intent-tag">Save for later</span>
+          </div>
+          <div>
+            <h3>Maybe Later</h3>
+            <p>I am interested, but I may order in the future.</p>
+          </div>
+          <span class="intent-action">Keep in touch →</span>
+        </a>
+
+        <button
+          type="button"
+          class="intent-card intent-button"
+          data-support-open
+          aria-controls="support-artist"
+          aria-expanded="false"
+        >
+          <div class="intent-top">
+            <span class="intent-number">03</span>
+            <span class="intent-tag">Support</span>
+          </div>
+          <div>
+            <h3>Show Support</h3>
+            <p>I like the work and wanted to appreciate or support.</p>
+          </div>
+          <span class="intent-action">View QR code →</span>
+        </button>
+      </div>
+
+      <div class="final-mini-nav" aria-label="Quick navigation">
+        <a href="order.html">Full order page</a>
+        <a href="gallery.html">See gallery</a>
+        <a href="contact.html">Contact directly</a>
+        <a href="#top" data-scroll-top>Back to top</a>
+      </div>
+
+      <div class="support-panel" id="support-artist" aria-hidden="true">
+        <div class="support-topbar">
+          <button type="button" class="support-back" data-support-back>← Back to choices</button>
+          <div class="support-switches" aria-label="Switch option">
+            <a href="https://api.whatsapp.com/send?text=Hi%20MalayPaul%20Arts%2C%20I%20am%20ready%20to%20order%20and%20want%20to%20discuss%20my%20artwork%20now." data-wa-message="Hi MalayPaul Arts, I am ready to order and want to discuss my artwork now.">Order instead</a>
+            <a href="https://api.whatsapp.com/send?text=Hi%20MalayPaul%20Arts%2C%20I%20am%20interested%20in%20your%20artwork%2C%20but%20I%20may%20order%20in%20the%20future.%20Please%20share%20details%20with%20me." data-wa-message="Hi MalayPaul Arts, I am interested in your artwork, but I may order in the future. Please share details with me.">Maybe later</a>
+          </div>
+        </div>
+
+        <div class="support-copy">
+          <span class="support-kicker">Support section</span>
+          <h3>Support the Artist</h3>
+          <p>
+            Not ordering right now? Your support still means a lot. Even a small help like ₹1 genuinely motivates me to keep creating more handmade art with patience, detail, and love.
+          </p>
+          <div class="support-points" aria-label="Support notes">
+            <span>No pressure to order</span>
+            <span>Small support matters</span>
+            <span>Handmade art takes time</span>
+          </div>
+        </div>
+
+        <div class="qr-card" aria-label="Support QR Code">
+          <div class="qr-frame">
+            <img src="qr.jpeg" alt="MalayPaul Arts support QR code" />
+          </div>
+          <p>Scan the QR to support the artwork. Even a tiny amount is genuinely appreciated.</p>
+          <div class="qr-actions">
+            <a href="https://api.whatsapp.com/send?text=Hi%20MalayPaul%20Arts%2C%20I%20just%20supported%20your%20artwork.%20Keep%20creating!" class="qr-action primary" data-wa-message="Hi MalayPaul Arts, I just supported your artwork. Keep creating!">Tell me on WhatsApp →</a>
+            <button type="button" class="qr-action" data-support-back>Back to choices</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2390,6 +3268,67 @@
         });
         ticking = true;
       }
+    });
+
+
+    const artistWhatsAppNumber = ""; // Add your number like "919876543210" to make WhatsApp buttons open your chat directly.
+
+    function buildWhatsAppLink(message) {
+      const encodedMessage = encodeURIComponent(message);
+      const cleanNumber = artistWhatsAppNumber.trim();
+      return cleanNumber
+        ? "https://wa.me/" + cleanNumber + "?text=" + encodedMessage
+        : "https://api.whatsapp.com/send?text=" + encodedMessage;
+    }
+
+    document.querySelectorAll('[data-wa-message]').forEach(function(link) {
+      link.href = buildWhatsAppLink(link.dataset.waMessage);
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+
+    const finalTouch = document.getElementById('final-touch');
+    const supportPanel = document.getElementById('support-artist');
+    const supportOpenButton = document.querySelector('[data-support-open]');
+    const intentChoice = document.getElementById('intent-choice');
+
+    function openSupportPanel() {
+      if (!finalTouch || !supportPanel) return;
+      finalTouch.classList.add('support-open');
+      supportPanel.setAttribute('aria-hidden', 'false');
+      if (supportOpenButton) supportOpenButton.setAttribute('aria-expanded', 'true');
+      window.setTimeout(function() {
+        supportPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 80);
+    }
+
+    function closeSupportPanel() {
+      if (!finalTouch || !supportPanel) return;
+      finalTouch.classList.remove('support-open');
+      supportPanel.setAttribute('aria-hidden', 'true');
+      if (supportOpenButton) supportOpenButton.setAttribute('aria-expanded', 'false');
+      window.setTimeout(function() {
+        (intentChoice || finalTouch).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 40);
+    }
+
+    if (supportOpenButton) {
+      supportOpenButton.addEventListener('click', openSupportPanel);
+    }
+
+    document.querySelectorAll('[data-support-back]').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        closeSupportPanel();
+      });
+    });
+
+    document.querySelectorAll('[data-scroll-top]').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
 
     setActiveNav();
