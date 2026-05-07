@@ -77,7 +77,9 @@
       inset: 0;
       pointer-events: none;
       z-index: -1;
-      background: linear-gradient(90deg, rgba(255,255,255,0.24), transparent 26%, transparent 74%, rgba(255,255,255,0.20));
+      background:
+        radial-gradient(circle at var(--mx, 52%) var(--my, 16%), rgba(255,255,255,0.38), transparent 25%),
+        linear-gradient(90deg, rgba(255,255,255,0.24), transparent 26%, transparent 74%, rgba(255,255,255,0.20));
       opacity: 0.72;
     }
 
@@ -90,6 +92,29 @@
     img {
       max-width: 100%;
       display: block;
+    }
+
+    .hero,
+    .section,
+    .final-touch,
+    .premium-footer {
+      content-visibility: auto;
+      contain-intrinsic-size: 760px;
+    }
+
+    .hero,
+    .art-frame,
+    .card,
+    .emotion-card,
+    .premium-card,
+    .proof-card,
+    .step,
+    .choice-card,
+    .gallery-card,
+    .journal-card,
+    .social-tile,
+    .intent-card {
+      will-change: transform;
     }
 
     a {
@@ -1881,6 +1906,304 @@
       outline-offset: 3px;
     }
 
+
+
+    .social-section {
+      padding-top: clamp(58px, 7vw, 92px);
+    }
+
+    .social-shell,
+    .journal-shell {
+      max-width: 1240px;
+      margin: auto;
+    }
+
+    .social-shell {
+      padding: 1px;
+      border-radius: 42px;
+      background: linear-gradient(135deg, rgba(176,137,104,0.62), rgba(255,250,243,0.38), rgba(47,36,32,0.28));
+      box-shadow: 0 34px 100px rgba(47,36,32,0.13);
+      overflow: hidden;
+    }
+
+    .social-inner {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
+      align-items: stretch;
+      padding: clamp(24px, 4vw, 38px);
+      border-radius: 41px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.62), transparent 30%),
+        radial-gradient(circle at 94% 16%, rgba(176,137,104,0.18), transparent 34%),
+        rgba(255,250,243,0.74);
+      border: 1px solid rgba(255,250,243,0.70);
+    }
+
+    .social-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 320px;
+      padding: clamp(8px, 2vw, 18px);
+    }
+
+    .social-copy h2 {
+      max-width: 560px;
+      font-size: clamp(34px, 4.2vw, 58px);
+      line-height: 1.02;
+      margin-bottom: 14px;
+    }
+
+    .social-copy p {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.78;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .social-tile {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      background: linear-gradient(145deg, rgba(255,250,243,0.82), rgba(247,234,220,0.62));
+      border: 1px solid rgba(229,207,185,0.82);
+      box-shadow: 0 18px 46px rgba(62,47,47,0.09), inset 0 1px 0 rgba(255,255,255,0.72);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+
+    .social-tile:hover {
+      transform: translateY(-7px);
+      border-color: rgba(176,137,104,0.50);
+      box-shadow: 0 30px 78px rgba(47,36,32,0.15);
+    }
+
+    .social-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 19px;
+      color: white;
+      background: linear-gradient(135deg, var(--deep), var(--gold-dark));
+      box-shadow: 0 18px 36px rgba(47,36,32,0.18);
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .social-tile small {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .social-tile strong {
+      display: block;
+      margin-bottom: 7px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      letter-spacing: -0.04em;
+    }
+
+    .social-tile span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.5;
+    }
+
+    .journal-section {
+      padding-top: clamp(64px, 7vw, 98px);
+    }
+
+    .journal-shell {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .journal-feature {
+      min-height: 520px;
+      padding: clamp(30px, 4vw, 46px);
+      border-radius: 42px;
+      color: white;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(255,255,255,0.16), transparent 34%),
+        radial-gradient(circle at 100% 12%, rgba(213,176,141,0.20), transparent 34%),
+        linear-gradient(135deg, #241916, #7f5539);
+      box-shadow: 0 38px 95px rgba(47,36,32,0.24);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .journal-feature::after {
+      content: "Journal";
+      position: absolute;
+      right: -0.18em;
+      bottom: -0.18em;
+      color: rgba(255,255,255,0.06);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(92px, 12vw, 170px);
+      font-weight: 800;
+      letter-spacing: -0.08em;
+      pointer-events: none;
+    }
+
+    .journal-feature .section-kicker {
+      color: #f3d6b5;
+    }
+
+    .journal-feature h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .journal-feature p {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.82;
+      font-size: 15px;
+    }
+
+    .journal-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .journal-pill {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.78);
+      background: rgba(255,250,243,0.12);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .journal-card {
+      min-height: 158px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 24px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(255,250,243,0.88), rgba(255,250,243,0.58));
+      border: 1.5px solid var(--line-2);
+      box-shadow: 0 20px 48px rgba(62,47,47,0.09), inset 0 1px 0 rgba(255,255,255,0.70);
+      text-decoration: none;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+
+    .journal-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(176,137,104,0.52);
+      box-shadow: 0 30px 72px rgba(62,47,47,0.14), inset 0 1px 0 rgba(255,255,255,0.72);
+    }
+
+    .journal-mark {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border-radius: 23px;
+      color: var(--gold-dark);
+      background: linear-gradient(135deg, rgba(176,137,104,0.20), rgba(143,95,59,0.10));
+      border: 1px solid rgba(176,137,104,0.24);
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .journal-card small {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold-dark);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .journal-card h3 {
+      margin-bottom: 6px;
+      font-size: 25px;
+    }
+
+    .journal-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .footer-socials {
+      max-width: 1180px;
+      margin: 0 auto 24px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-socials a {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 15px;
+      border-radius: 999px;
+      color: var(--gold-dark);
+      background: rgba(255,250,243,0.58);
+      border: 1px solid rgba(229,207,185,0.82);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 900;
+      transition: transform 0.24s ease, background 0.24s ease;
+    }
+
+    .footer-socials a:hover {
+      transform: translateY(-2px);
+      background: rgba(255,250,243,0.82);
+    }
+
     @media (max-width: 1180px) {
       .nav-shell {
         grid-template-columns: minmax(180px, 1fr) auto minmax(170px, 1fr);
@@ -1902,7 +2225,9 @@
 
       .belief-wrap,
       .gallery-showcase,
-      .comparison-wrap {
+      .comparison-wrap,
+      .social-inner,
+      .journal-shell {
         grid-template-columns: 1fr;
       }
 
@@ -1911,6 +2236,10 @@
       .timeline,
       .choice-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .belief-quote {
@@ -2049,8 +2378,35 @@
       .timeline,
       .choice-grid,
       .comparison-wrap,
-      .intent-grid {
+      .intent-grid,
+      .social-grid,
+      .journal-shell {
         grid-template-columns: 1fr;
+      }
+
+      .social-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .social-copy {
+        min-height: auto;
+        align-items: center;
+      }
+
+      .social-tile {
+        min-height: 190px;
+        text-align: left;
+      }
+
+      .journal-feature {
+        min-height: 410px;
+        text-align: center;
+        align-items: center;
+      }
+
+      .journal-actions {
+        justify-content: center;
       }
 
       .scarcity-inner {
@@ -2281,9 +2637,20 @@
       .proof-card,
       .step,
       .choice-card,
-      .compare-card {
+      .compare-card,
+      .journal-card,
+      .social-tile {
         padding: 24px;
         border-radius: 25px;
+      }
+
+      .journal-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .journal-mark {
+        margin-inline: auto;
       }
 
       .gallery-card h3 {
@@ -2752,6 +3119,99 @@
       </div>
     </section>
 
+
+
+    <section class="section social-section" id="socials">
+      <div class="social-shell reveal">
+        <div class="social-inner">
+          <div class="social-copy">
+            <span class="section-kicker">Follow the making</span>
+            <h2>See the art before it becomes yours.</h2>
+            <p>
+              Follow MalayPaul Arts for behind-the-scenes string work, finished pieces, gift ideas, customer stories, and small details that make each artwork feel more personal.
+            </p>
+          </div>
+
+          <div class="social-grid" aria-label="MalayPaul Arts social links">
+            <a class="social-tile" href="https://www.instagram.com/malaypaularts" target="_blank" rel="noopener">
+              <div class="social-icon">IG</div>
+              <div>
+                <small>Instagram</small>
+                <strong>@malaypaularts</strong>
+                <span>Reels, artwork reveals, stories, progress shots.</span>
+              </div>
+            </a>
+
+            <a class="social-tile" href="https://www.facebook.com/malaypaularts" target="_blank" rel="noopener">
+              <div class="social-icon">FB</div>
+              <div>
+                <small>Facebook</small>
+                <strong>MalayPaul Arts</strong>
+                <span>Updates, posts, customer memories, and offers.</span>
+              </div>
+            </a>
+
+            <a class="social-tile" href="https://www.youtube.com/@malaypaularts" target="_blank" rel="noopener">
+              <div class="social-icon">YT</div>
+              <div>
+                <small>YouTube</small>
+                <strong>@malaypaularts</strong>
+                <span>DIY ideas, process videos, and string art learning.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journal-section" id="journal">
+      <div class="journal-shell">
+        <div class="journal-feature reveal">
+          <div>
+            <span class="section-kicker">Studio Journal</span>
+            <h2>A premium blog for ideas, stories, and string art secrets.</h2>
+            <p>
+              This is the extra section I’d add. It makes the brand feel alive, builds trust, helps people understand the craft, and gives you a place to keep posting experiences, DIY tips, photo guides, and behind-the-scenes thoughts.
+            </p>
+          </div>
+          <div class="journal-actions" aria-label="Journal topics">
+            <span class="journal-pill">Photo guide</span>
+            <span class="journal-pill">DIY string art</span>
+            <span class="journal-pill">Gift ideas</span>
+          </div>
+        </div>
+
+        <div class="journal-grid">
+          <a class="journal-card reveal" href="#journal">
+            <div class="journal-mark">01</div>
+            <div>
+              <small>Photo selection</small>
+              <h3>How to choose the right photo for string art</h3>
+              <p>Teach customers which photos work best: clear face, good lighting, simple background, and visible details.</p>
+            </div>
+          </a>
+
+          <a class="journal-card reveal" href="#journal">
+            <div class="journal-mark">02</div>
+            <div>
+              <small>Behind the craft</small>
+              <h3>How string art actually works</h3>
+              <p>Explain the nails, threads, planning, patience, and why handmade art takes time but feels more premium.</p>
+            </div>
+          </a>
+
+          <a class="journal-card reveal" href="#journal">
+            <div class="journal-mark">03</div>
+            <div>
+              <small>DIY corner</small>
+              <h3>Can you make string art yourself?</h3>
+              <p>A friendly DIY post for beginners, while also showing why a detailed custom portrait needs practice.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="final-touch reveal" id="final-touch">
       <div class="final-touch-inner">
         <div class="final-copy-block">
@@ -2809,6 +3269,8 @@
           <a href="order.html">Order page</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
+          <a href="#journal">Journal</a>
+          <a href="#socials">Socials</a>
           <a href="#top" data-scroll-top>Back to top</a>
         </div>
       </div>
@@ -2840,11 +3302,18 @@
         <span>WhatsApp support</span>
       </div>
 
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="https://www.instagram.com/malaypaularts" target="_blank" rel="noopener">Instagram · @malaypaularts</a>
+        <a href="https://www.facebook.com/malaypaularts" target="_blank" rel="noopener">Facebook · MalayPaul Arts</a>
+        <a href="https://www.youtube.com/@malaypaularts" target="_blank" rel="noopener">YouTube · @malaypaularts</a>
+      </div>
+
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="order.html">Order</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
+        <a href="#journal">Journal</a>
         <button type="button" data-support-open>Support</button>
       </div>
 
@@ -3054,7 +3523,7 @@
       });
 
       const revealItems = document.querySelectorAll('.reveal');
-
+     
       if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
